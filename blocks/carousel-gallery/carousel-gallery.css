@@ -1,0 +1,84 @@
+/*
+ * carousel-gallery — image-only slide gallery.
+ * Structural only: a horizontal sliding track, prev/next buttons, dot row.
+ */
+
+.carousel-gallery {
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel-gallery .carousel-gallery-track {
+  display: flex;
+  transition: transform 0.4s ease;
+}
+
+.carousel-gallery .carousel-gallery-slide {
+  flex: 0 0 100%;
+  min-width: 0;
+  line-height: 0;
+}
+
+.carousel-gallery .carousel-gallery-slide img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Prev/next controls */
+.carousel-gallery .carousel-gallery-nav {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  pointer-events: none;
+}
+
+.carousel-gallery .carousel-gallery-prev,
+.carousel-gallery .carousel-gallery-next {
+  pointer-events: auto;
+  width: 44px;
+  height: 44px;
+  border: 0;
+  background: rgb(0 0 0 / 40%);
+  color: #fff;
+  cursor: pointer;
+}
+
+.carousel-gallery .carousel-gallery-prev::before {
+  content: '\2039';
+  font-size: 28px;
+  line-height: 1;
+}
+
+.carousel-gallery .carousel-gallery-next::before {
+  content: '\203A';
+  font-size: 28px;
+  line-height: 1;
+}
+
+/* Dot indicators */
+.carousel-gallery .carousel-gallery-dots {
+  position: absolute;
+  bottom: 12px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.carousel-gallery .carousel-gallery-dot {
+  width: 10px;
+  height: 10px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: rgb(255 255 255 / 50%);
+  cursor: pointer;
+}
+
+.carousel-gallery .carousel-gallery-dot[aria-selected='true'] {
+  background: #fff;
+}

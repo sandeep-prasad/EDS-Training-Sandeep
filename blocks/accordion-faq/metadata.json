@@ -1,0 +1,10 @@
+{
+  "variantName": "accordion-faq",
+  "baseBlock": "accordion",
+  "visualCharacteristics": "Expandable FAQ list: full-width question rows separated by hairline rules, each with a +/- affordance that toggles a rich-text answer panel open. Light, comfortable, no images.",
+  "contentPattern": "One row per Q&A: cell 1 is the question (the toggle), cell 2 is the answer content. All items start collapsed.",
+  "usage": "FAQ pages — an expandable question/answer accordion.",
+  "canonicalModel": "standalone",
+  "options": [],
+  "memberVariantIds": ["accordion-faq"]
+}

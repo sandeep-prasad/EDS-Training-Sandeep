@@ -1,0 +1,10 @@
+{
+  "variantName": "tabs-filter",
+  "baseBlock": "tabs",
+  "visualCharacteristics": "Horizontal category-filter tab strip with uppercase labels; the active tab is highlighted with a filled block. Each tab reveals one content panel, typically a multi-up grid of borderless cards.",
+  "contentPattern": "One row per tab. Cell 1 is the tab label; cell 2 is that tab's panel content (e.g. a card grid). The first tab is shown by default.",
+  "usage": "Interactive category filter for listing pages (e.g. an adventures browser filtered by All / Climbing / Cycling / Skiing / Surfing / Travel).",
+  "canonicalModel": "standalone",
+  "options": [],
+  "memberVariantIds": ["tabs-filter"]
+}

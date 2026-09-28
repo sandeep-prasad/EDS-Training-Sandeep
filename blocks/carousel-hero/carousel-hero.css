@@ -1,0 +1,254 @@
+/* Block: carousel-hero -- WKND full-bleed photographic hero.
+   Values extracted from source computed styles (wknd.site/us/en). */
+
+/* Full-bleed: escape the section's max-width:1200 / horizontal padding */
+.carousel-hero-wrapper {
+  max-width: 100% !important;
+  padding: 0 !important;
+}
+
+.carousel-hero {
+  position: relative;
+  background-color: #fff;
+}
+
+.carousel-hero .carousel-hero-slides-container {
+  position: static;
+}
+
+.carousel-hero .carousel-hero-slides,
+.carousel-hero .carousel-hero-slide-indicators {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.carousel-hero .carousel-hero-slides {
+  display: flex;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  overflow: scroll clip;
+}
+
+.carousel-hero .carousel-hero-slides::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel-hero .carousel-hero-slide {
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  position: relative;
+  width: 100%;
+}
+
+/* --- Image --- */
+.carousel-hero .carousel-hero-slide .carousel-hero-slide-image {
+  width: 100%;
+}
+
+.carousel-hero .carousel-hero-slide .carousel-hero-slide-image picture {
+  display: block;
+}
+
+.carousel-hero .carousel-hero-slide .carousel-hero-slide-image picture > img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* --- White content box --- */
+.carousel-hero .carousel-hero-slide .carousel-hero-slide-content {
+  z-index: 1;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 18px 14px;
+  background-color: #fff;
+  position: relative;
+  width: 100%;
+}
+
+.carousel-hero .carousel-hero-slide-content h2 {
+  margin: 0;
+  font-family: var(--heading-font-family);
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #202020;
+}
+
+.carousel-hero .carousel-hero-slide-content p {
+  margin: 0;
+  font-family: var(--body-font-family);
+  font-size: 18px;
+  line-height: 31.5px;
+  color: #202020;
+}
+
+/* --- CTA link (not auto-decorated to .button -- style directly) --- */
+.carousel-hero .carousel-hero-slide-content p:last-child {
+  margin-top: 18px;
+}
+
+.carousel-hero .carousel-hero-slide-content a:any-link {
+  display: inline-block;
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+  padding: 14px 35px;
+  background-color: var(--brand-primary);
+  color: #202020;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.25;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.carousel-hero .carousel-hero-slide-content a:any-link:hover,
+.carousel-hero .carousel-hero-slide-content a:any-link:focus-visible {
+  background-color: #e6d200;
+  color: #202020;
+  text-decoration: none;
+}
+
+/* --- Dot indicators (centered) --- */
+.carousel-hero .carousel-hero-slide-indicators {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0;
+  padding: 20px 12px;
+  line-height: 0;
+  z-index: 2;
+}
+
+.carousel-hero .carousel-hero-slide-indicator {
+  margin: 0 7px;
+}
+
+.carousel-hero .carousel-hero-slide-indicator button {
+  width: 10px;
+  height: 10px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background-color: #afafaf;
+  transition: background-color 0.2s;
+  cursor: pointer;
+}
+
+.carousel-hero .carousel-hero-slide-indicator button:disabled,
+.carousel-hero .carousel-hero-slide-indicator button:hover,
+.carousel-hero .carousel-hero-slide-indicator button:focus-visible {
+  background-color: rgb(0 0 0 / 80%);
+}
+
+/* --- Prev / next arrows (bottom-right, dark chevrons) --- */
+.carousel-hero .carousel-hero-navigation-buttons {
+  position: absolute;
+  bottom: 14px;
+  right: 16px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  z-index: 2;
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+.carousel-hero .carousel-hero-navigation-buttons button {
+  position: relative;
+  width: 28px;
+  height: 28px;
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+  background-color: transparent;
+  color: #202020;
+  transition: opacity 0.2s;
+  cursor: pointer;
+}
+
+.carousel-hero .carousel-hero-navigation-buttons button:hover,
+.carousel-hero .carousel-hero-navigation-buttons button:focus-visible {
+  opacity: 0.6;
+}
+
+.carousel-hero .carousel-hero-navigation-buttons button::after {
+  display: block;
+  content: '';
+  border: 2px solid;
+  border-bottom: 0;
+  border-left: 0;
+  height: 12px;
+  width: 12px;
+  position: absolute;
+  top: 50%;
+  left: calc(50% + 2px);
+  transform: translate(-50%, -50%) rotate(-135deg);
+}
+
+.carousel-hero .carousel-hero-navigation-buttons button.slide-next::after {
+  transform: translate(-50%, -50%) rotate(45deg);
+  left: calc(50% - 2px);
+}
+
+/* ===================== Desktop ===================== */
+@media (width >= 900px) {
+  /* white strip below the photo holds dots + arrows (source total ~668px:
+     640px photo + ~28px strip) */
+  .carousel-hero {
+    padding-bottom: 28px;
+  }
+
+  /* fixed-height photo in normal flow (source: 640px) — constrain the
+     <picture>/<img> to the container so the photo doesn't grow to its
+     intrinsic height (~810px). */
+  .carousel-hero .carousel-hero-slide .carousel-hero-slide-image {
+    height: 640px;
+  }
+
+  .carousel-hero .carousel-hero-slide .carousel-hero-slide-image picture {
+    height: 100%;
+  }
+
+  /* centered white box pulled up to overlap the photo bottom by 180px */
+  .carousel-hero .carousel-hero-slide .carousel-hero-slide-content {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 1192px;
+    margin: -180px auto 0;
+    padding: 18px 28px;
+  }
+
+  .carousel-hero .carousel-hero-slide-content h2 {
+    margin: 0;
+  }
+
+  .carousel-hero .carousel-hero-slide-content p {
+    margin: 0;
+  }
+
+  .carousel-hero .carousel-hero-slide-content p:last-child {
+    margin-top: 18px;
+  }
+
+  .carousel-hero .carousel-hero-slide-indicators {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 8px;
+    padding: 0;
+  }
+
+  .carousel-hero .carousel-hero-navigation-buttons {
+    bottom: 2px;
+    right: 0;
+  }
+}

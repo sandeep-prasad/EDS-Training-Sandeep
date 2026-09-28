@@ -1,0 +1,105 @@
+/*
+ * cards-profile — contributor/team profile card grid.
+ * Centered cards: a circular portrait on top, name, role/occupation line, and a
+ * row of social icon tiles. Matches the WKND About Us contributor cards.
+ */
+
+.cards-profile > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 48px 24px;
+}
+
+.cards-profile > ul > li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 0;
+  text-align: center;
+}
+
+/* Circular portrait (source: ~164px round, cover). */
+.cards-profile .cards-profile-card-image {
+  line-height: 0;
+  width: 164px;
+  max-width: 100%;
+}
+
+.cards-profile .cards-profile-card-image img {
+  width: 164px;
+  height: 164px;
+  max-width: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.cards-profile .cards-profile-card-body {
+  margin-top: 16px;
+}
+
+/* Name — serif heading (source: 24px Asar). */
+.cards-profile .cards-profile-card-body h3 {
+  margin: 0 0 4px;
+  font-size: 24px;
+}
+
+/* Role — sans-serif, uppercase, semibold (source: 14px Source Sans Pro 600). */
+.cards-profile .cards-profile-card-body h5 {
+  margin: 0 0 12px;
+  font-family: var(--body-font-family);
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--text-color, #202020);
+}
+
+/* Social row — centered icon tiles. */
+.cards-profile .cards-profile-card-social {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin: 0;
+}
+
+.cards-profile .cards-profile-social-link {
+  display: inline-block;
+  width: 36px;
+  height: 36px;
+  background-color: var(--text-color, #202020);
+  mask-position: center;
+  mask-repeat: no-repeat;
+  mask-size: 22px 22px;
+  transition: opacity 0.2s;
+}
+
+.cards-profile .cards-profile-social-link:hover,
+.cards-profile .cards-profile-social-link:focus-visible {
+  opacity: 0.7;
+}
+
+.cards-profile .cards-profile-social-facebook {
+  mask-image: url('/icons/facebook.svg');
+}
+
+.cards-profile .cards-profile-social-twitter {
+  mask-image: url('/icons/twitter.svg');
+}
+
+.cards-profile .cards-profile-social-instagram {
+  mask-image: url('/icons/instagram.svg');
+}
+
+@media (width >= 600px) {
+  .cards-profile > ul {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (width >= 900px) {
+  .cards-profile > ul {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

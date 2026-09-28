@@ -1,0 +1,10 @@
+{
+  "variantName": "carousel-hero",
+  "baseBlock": "carousel",
+  "visualCharacteristics": "Full-bleed photographic slides that rotate; each slide has a background image with an overlaid content box containing a heading, paragraph, and a single CTA button. Prev/next navigation arrows and dot slide indicators.",
+  "contentPattern": "One row per slide. Each row has two cells: an image cell (background photo) and a content cell (heading + paragraph + CTA link).",
+  "usage": "Top-of-page hero carousel showcasing featured adventures/articles, each slide linking to a destination.",
+  "canonicalModel": "standalone",
+  "options": [],
+  "memberVariantIds": ["carousel-hero"]
+}
