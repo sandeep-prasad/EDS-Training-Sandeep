@@ -1,0 +1,10 @@
+{
+  "variantName": "cards-profile",
+  "baseBlock": "cards",
+  "visualCharacteristics": "Centered team/contributor profile cards in a responsive multi-up grid: a portrait image on top, then a name heading, a role/occupation line, and a row of social links.",
+  "contentPattern": "One row per person: portrait image cell, name cell, role cell, and an optional social-links cell. The image cell is detected by content.",
+  "usage": "About/team pages — contributor and guide grids ('Our Contributors', 'WKND Guides').",
+  "canonicalModel": "standalone",
+  "options": [],
+  "memberVariantIds": ["cards-profile"]
+}

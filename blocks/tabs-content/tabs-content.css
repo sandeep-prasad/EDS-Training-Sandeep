@@ -1,0 +1,42 @@
+/*
+ * tabs-content — prose content switcher.
+ * Structural only: horizontal tab strip, active-tab highlight, panel visibility.
+ */
+
+.tabs-content .tabs-content-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+  margin: 0 0 24px;
+  padding: 0;
+  border-bottom: 1px solid #ebebeb;
+}
+
+.tabs-content .tabs-content-tab {
+  margin: 0;
+  padding: 12px 20px;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  background: transparent;
+  color: var(--text-color, #202020);
+  font-family: var(--body-font-family);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.2;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+/* Active tab — underlined with the brand accent. */
+.tabs-content .tabs-content-tab[aria-selected='true'] {
+  border-bottom-color: var(--brand-primary, #ffea00);
+  font-weight: 600;
+}
+
+.tabs-content .tabs-content-panel[hidden] {
+  display: none;
+}
+
+.tabs-content .tabs-content-panel {
+  margin: 0;
+}

@@ -1,20 +1,166 @@
+/* WKND footer — mobile-first */
+
 footer {
-  background-color: var(--light-color);
-  font-size: var(--body-font-size-xs);
+  background-color: #202020;
+  color: #ebebeb;
+  font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
-footer .footer > div {
-  margin: auto;
+footer .footer-inner {
   max-width: 1200px;
-  padding: 40px 24px 24px;
+  margin: 0 auto;
+  padding: 16px 24px 24px;
 }
 
-footer .footer p {
+footer a {
+  color: #ebebeb;
+  text-decoration: none;
+}
+
+footer ul {
+  list-style: none;
   margin: 0;
+  padding: 0;
 }
 
+footer p {
+  margin: 0 0 12px;
+}
+
+/* brand + nav */
+footer .footer-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-bottom: 16px;
+}
+
+footer .footer-brand img {
+  height: 48px; /* match source footer logo */
+  width: auto;
+}
+
+footer .footer-nav ul {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+footer .footer-nav a {
+  display: inline-block;
+  padding: 8px 4px;
+  color: #ebebeb; /* light, like source (overrides global dark link color) */
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+footer .footer-nav a:hover,
+footer .footer-nav a:focus {
+  color: var(--wknd-brand-yellow, #ffea00);
+}
+
+/* social — heading + icon tiles on one row (like source) */
+footer .footer-social {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 0;
+}
+
+footer .footer-social h4 {
+  margin: 0;
+  color: #ebebeb; /* override global h1-h6 dark color */
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.5;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+footer .footer-social-list {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* each social link is a 48x48 light square tile with a dark glyph */
+/* stylelint-disable-next-line no-descending-specificity */
+footer .footer-social-list a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background-color: #ebebeb;
+  color: #202020;
+  transition: opacity 0.2s;
+}
+
+footer .footer-social-list img {
+  width: 24px;
+  height: 24px;
+  display: block;
+}
+
+footer .footer-social-list a:hover,
+footer .footer-social-list a:focus {
+  opacity: 0.7;
+}
+
+/* legal */
+footer .footer-legal {
+  border-top: 1px solid rgb(235 235 235 / 25%);
+  padding-top: 16px;
+  font-size: 12px;
+  line-height: 1.6;
+  color: #f7f7f7;
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+footer .footer-legal a {
+  color: #f7f7f7; /* light, like source (overrides global dark link color) */
+  text-decoration: underline;
+}
+
+footer .footer-legal a:hover,
+footer .footer-legal a:focus {
+  color: var(--wknd-brand-yellow, #ffea00);
+}
+
+/* desktop */
 @media (width >= 900px) {
-  footer .footer > div {
-    padding: 40px 32px 24px;
+  footer .footer-inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    max-width: 1136px;
+    padding: 16px;
+  }
+
+  /* top row: logo + nav (left) grow, social pinned right */
+  footer .footer-brand {
+    flex: 1 1 auto;
+    flex-direction: row;
+    align-items: center;
+    gap: 48px;
+    padding-bottom: 0;
+  }
+
+  footer .footer-nav ul {
+    flex-direction: row;
+    gap: 24px;
+  }
+
+  footer .footer-social {
+    flex: 0 0 auto;
+    padding: 0;
+    text-align: left;
+  }
+
+  /* legal spans the full width on its own row below */
+  footer .footer-legal {
+    flex: 1 1 100%;
+    margin-top: 16px;
   }
 }

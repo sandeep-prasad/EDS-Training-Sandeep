@@ -1,0 +1,103 @@
+/* Block: hero-banner
+ * "imagebottom" teaser: full-bleed photographic banner with a white content
+ * box overlapping the bottom of the image. Values extracted from source
+ * computed styles + getBoundingClientRect (wknd.site) at 1440px and 375px.
+ */
+
+/* full-bleed: neutralize section max-width + padding so the banner spans edge to edge */
+.hero-banner-container .hero-banner-wrapper {
+  max-width: unset;
+  padding: 0;
+}
+
+.hero-banner {
+  position: relative;
+}
+
+/* image row -- full-width banner in normal flow */
+.hero-banner > div:first-child {
+  margin: 0;
+  line-height: 0;
+}
+
+.hero-banner picture {
+  display: block;
+}
+
+.hero-banner img {
+  display: block;
+  width: 100%;
+  height: 250px; /* source mobile image height */
+  object-fit: cover;
+}
+
+/* white content box overlapping the bottom of the image */
+.hero-banner-content {
+  position: relative;
+  z-index: 1;
+  box-sizing: border-box;
+  display: flow-root; /* contain child margins so the 18px top/bottom rhythm stays inside the box */
+  width: 100%;
+  margin: 0;
+  padding: 0 14px; /* source mobile inset */
+  background-color: var(--background-color);
+}
+
+.hero-banner-content h2 {
+  margin: 18px 0 0;
+  font-family: var(--heading-font-family);
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 54px;
+  color: var(--text-color);
+}
+
+.hero-banner-content p {
+  margin: 0;
+  font-family: var(--body-font-family);
+  font-size: 18px;
+  line-height: 31.5px;
+  color: var(--text-color);
+}
+
+/* CTA paragraph (button) sits below the description: 18px above and below */
+.hero-banner-content .button-container {
+  margin: 18px 0;
+}
+
+/* match source CTA metrics exactly (global a.button provides bg/size/uppercase) */
+.hero-banner-content a.button:any-link {
+  border: 0; /* source CTA has no border; global rule adds 2px, inflating size by 4px */
+  line-height: 21px;
+  letter-spacing: normal;
+}
+
+/* no-image fallback: plain text block, no overlay */
+.hero-banner.no-image .hero-banner-content {
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+}
+
+@media (width >= 900px) {
+  .hero-banner img {
+    height: 640px; /* source desktop image height */
+  }
+
+  /* Overlay the white content box on the bottom of the image via absolute
+     positioning so the block height is always driven by the image (640px),
+     regardless of how tall the content is. A fixed negative top-margin only
+     lined up when the content happened to be ~180px tall; a shorter content
+     box (e.g. no CTA) shrank the block below the image, letting the image
+     overflow onto — and hide — the following section. */
+  .hero-banner-content {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: auto;
+    max-width: 1192px;
+    margin: 0 auto;
+    padding: 28px 28px 0; /* white box covers the image's lower strip */
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "variantName": "cards-promo",
+  "baseBlock": "cards",
+  "visualCharacteristics": "Two-up promo grid. Each item stacks a heading, a short description, and a 'Read More' CTA link above a photographic image (image sits below the text).",
+  "contentPattern": "One row per promo item. Each row has a body cell (heading + description + CTA link) and an image cell; the body renders above the image.",
+  "usage": "Members-only / featured promo pairs highlighting two stories, each with a call to action.",
+  "canonicalModel": "standalone",
+  "options": [],
+  "memberVariantIds": ["cards-promo"]
+}

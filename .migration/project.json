@@ -1,0 +1,11 @@
+{
+  "type": "da",
+  "sites": {
+    "eds-training-sandeep": {
+      "previewOrg": "sandeep-prasad",
+      "previewSite": "eds-training-sandeep",
+      "contentHostUrl": "https://content.da.live/sandeep-prasad/eds-training-sandeep/",
+      "libraryUrl": "https://main--eds-training-sandeep--sandeep-prasad.aem.page/tools/sidekick/library.json"
+    }
+  }
+}

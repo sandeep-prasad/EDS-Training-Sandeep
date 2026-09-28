@@ -1,0 +1,15 @@
+{
+  "project": "WKND",
+  "plugins": [
+    {
+      "id": "library",
+      "title": "Library",
+      "environments": ["edit"],
+      "url": "https://da.live/app/aem-boilerplate/sidekick/library",
+      "includePaths": ["**.docx**"]
+    }
+  ],
+  "library": [
+    { "title": "Blocks", "path": "/tools/sidekick/library.json" }
+  ]
+}

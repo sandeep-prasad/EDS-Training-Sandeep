@@ -1,0 +1,10 @@
+{
+  "variantName": "carousel-gallery",
+  "baseBlock": "carousel",
+  "visualCharacteristics": "Full-width image-only slide gallery with prev/next arrow controls and dot indicators. No text overlay on slides — each slide is a single photograph.",
+  "contentPattern": "First row is the block name; each subsequent row is one slide with a single image cell.",
+  "usage": "Adventure detail pages — the hero image gallery at the top of the page.",
+  "canonicalModel": "standalone",
+  "options": [],
+  "memberVariantIds": ["carousel-gallery"]
+}

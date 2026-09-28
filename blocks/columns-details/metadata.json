@@ -1,0 +1,10 @@
+{
+  "variantName": "columns-details",
+  "baseBlock": "columns",
+  "visualCharacteristics": "Compact activity/spec panel: an optional title followed by a definition list of uppercase labels each above its value (Activity, Adventure Type, Trip Length, Group Size, Difficulty, Price).",
+  "contentPattern": "First row optional single-cell title; each subsequent row is a two-cell label/value pair.",
+  "usage": "Adventure detail pages — the activity facts/spec panel beside the description.",
+  "canonicalModel": "standalone",
+  "options": [],
+  "memberVariantIds": ["columns-details"]
+}

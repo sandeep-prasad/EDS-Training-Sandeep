@@ -1,0 +1,10 @@
+{
+  "variantName": "tabs-content",
+  "baseBlock": "tabs",
+  "visualCharacteristics": "Horizontal tab strip (uppercase labels, active tab underlined with the brand accent) switching between rich-text content panels.",
+  "contentPattern": "One row per tab: cell 1 is the tab label, cell 2 is that tab's body content. First tab shown by default.",
+  "usage": "Adventure detail pages — the Overview / Itinerary / What to Bring content switcher.",
+  "canonicalModel": "standalone",
+  "options": [],
+  "memberVariantIds": ["tabs-content"]
+}

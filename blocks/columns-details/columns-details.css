@@ -1,0 +1,27 @@
+/*
+ * columns-details — activity/spec key-value panel.
+ * Structural only: a definition list with label above value per pair.
+ */
+
+.columns-details .columns-details-title {
+  margin: 0 0 16px;
+}
+
+.columns-details .columns-details-list {
+  margin: 0;
+  padding: 0;
+}
+
+.columns-details .columns-details-list dt {
+  margin: 0;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.columns-details .columns-details-list dd {
+  margin: 0 0 16px;
+}
+
+.columns-details .columns-details-list dd:last-child {
+  margin-bottom: 0;
+}

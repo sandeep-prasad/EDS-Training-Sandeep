@@ -1,0 +1,15 @@
+{
+  "variantName": "columns-featured",
+  "baseBlock": "columns",
+  "visualCharacteristics": "Two-column featured promo on a light grey panel: image on the left, text block on the right containing an eyebrow label, heading, paragraph, and a single CTA button.",
+  "contentPattern": "Single row with two cells: an image cell and a content cell (eyebrow + heading + paragraph + CTA link).",
+  "usage": "Featured-article promo highlighting one story with an image and call to action.",
+  "canonicalModel": "standalone",
+  "options": [],
+  "memberVariantIds": ["columns-featured"],
+  "usage": {
+    "pagesUsing": ["/us/en/magazine"],
+    "reuseCount": 1,
+    "lastUsed": "2026-09-14"
+  }
+}

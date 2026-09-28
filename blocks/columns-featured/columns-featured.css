@@ -1,0 +1,127 @@
+/* columns-featured -- featured-article promo (image + text panel)
+   Values extracted from source computed styles (wknd.site .cmp-teaser--featured).
+   In the source only the RIGHT TEXT PANEL is grey (not the whole section and
+   not the image), and the block is contained (not full-bleed). */
+
+/* Neutralize the section-level `highlight` full-width grey — the source greys
+   only the text panel, applied below. Keep the section contained/centered. */
+.columns-featured-container.section.highlight {
+  background-color: transparent;
+  padding: 40px 0;
+}
+
+/* Row: stack on mobile, image on top */
+.columns-featured > div {
+  display: flex;
+  flex-direction: column;
+}
+
+.columns-featured img {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+}
+
+/* Text content cell -- grey panel, top-aligned (source justify-content: normal) */
+.columns-featured > div > div {
+  display: flex;
+  flex-direction: column;
+  padding: 32px 24px;
+  background-color: #ebebeb;
+}
+
+/* Image cell — no padding, and must NOT get the grey panel background.
+   Make the picture + image fill the full column height so the photo matches
+   the (taller, text-driven) row height instead of leaving a gap below it. */
+.columns-featured > div > .columns-featured-img-col {
+  padding: 0;
+  background-color: transparent;
+}
+
+.columns-featured > div > .columns-featured-img-col picture {
+  display: block;
+  height: 100%;
+}
+
+.columns-featured > div > .columns-featured-img-col img {
+  height: 100%;
+}
+
+/* Eyebrow label ("Featured Article") -- first paragraph */
+.columns-featured > div > div > p:first-child {
+  margin: 0 0 13.5px;
+  font-family: var(--body-font-family);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 2.5; /* source: 45px */
+  color: var(--text-color);
+}
+
+/* Heading */
+.columns-featured h2 {
+  margin: 18px 0;
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-size-xl); /* 36px */
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--text-color);
+}
+
+/* Description paragraph */
+/* stylelint-disable-next-line no-descending-specificity */
+.columns-featured > div > div > p {
+  margin: 0;
+  font-family: var(--body-font-family);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.75;
+  color: var(--text-color);
+}
+
+/* CTA -- source uses a plain link styled as a solid yellow button
+   (EDS does not decorate this anchor with .button here). */
+.columns-featured > div > div > p:last-child {
+  margin: 18px 0;
+}
+
+.columns-featured a:any-link {
+  display: inline-block;
+  padding: 14px 35px;
+  border: 0;
+  border-radius: 0;
+  background-color: var(--brand-primary);
+  color: var(--text-color);
+  font-family: var(--body-font-family);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.5; /* source: 21px */
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.columns-featured a:any-link:hover,
+.columns-featured a:any-link:focus-visible {
+  background-color: #e6d200;
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+/* Desktop: image left, text right */
+@media (width >= 900px) {
+  .columns-featured > div {
+    flex-direction: row;
+    align-items: stretch;
+  }
+
+  /* Text panel -- ~37% width (source: 427 of 1164) */
+  .columns-featured > div > div {
+    flex: 37;
+    padding: 63px 36px 36px;
+  }
+
+  /* Image -- ~61% width (source: 709 of 1164) */
+  .columns-featured > div > .columns-featured-img-col {
+    flex: 61;
+    padding: 0;
+  }
+}

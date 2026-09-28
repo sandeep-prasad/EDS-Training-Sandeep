@@ -1,0 +1,46 @@
+/*
+ * tabs-filter — horizontal category-filter tab strip + one panel per tab.
+ * Structural/functional only: layout, tab strip, active-tab highlight, panel
+ * visibility. Brand color/typography come from inherited tokens where possible.
+ */
+
+/* Source .cmp-tabs__tablist: flex row, no gap, margin 18px 0, no border. */
+.tabs-filter .tabs-filter-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+  margin: 18px 0;
+  padding: 0;
+  border: 0;
+}
+
+/* Source .cmp-tabs__tab: 14px Source Sans Pro, weight 400, uppercase,
+   padding 8px 16px, transparent bg, #202020 text, no letter-spacing. */
+.tabs-filter .tabs-filter-tab {
+  margin: 0;
+  padding: 8px 16px;
+  border: 0;
+  background: transparent;
+  color: var(--text-color, #202020);
+  font-family: var(--body-font-family);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.2;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+/* Active tab — dark fill, white text (source #202020 / #fff). */
+.tabs-filter .tabs-filter-tab[aria-selected='true'] {
+  background: var(--text-color, #202020);
+  color: #fff;
+}
+
+.tabs-filter .tabs-filter-panel[hidden] {
+  display: none;
+}
+
+/* Panels stretch full width so a nested card grid fills the container */
+.tabs-filter .tabs-filter-panel {
+  margin: 0;
+}
